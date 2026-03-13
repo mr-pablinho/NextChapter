@@ -9,6 +9,9 @@ template_style: "professional"
 # Typical values: 10pt, 11pt, 12pt
 font_size: "11pt"
 
+# Choose whether to show small FontAwesome icons next to your contact info (email, phone, LinkedIn, etc.)
+use_icons: true
+
 # Choose a font package for your document. 
 # Uncomment ONLY ONE of the options below. 
 # Note: Some fonts might require specific LaTeX packages to be installed by tectonic.

@@ -19,8 +19,8 @@ Read the provided job offer and identify the core requirements, key skills, and 
 **Step 2: Research the Company**
 Use web search tools to look up the company and find its website. Research its mission, vision, and core values. Analyze if incorporating this information into the cover letter improves its impact. If it feels forced, do not use it; if it aligns well, plan to weave it in naturally.
 
-**Step 3: Read the Master Data**
-Read the contents of `data/my_cv.yaml`. If this file does not exist, fallback to reading `data/master_cv.yaml`.
+**Step 3: Read the Master Data & Ask for Missing Links**
+Read the contents of `data/my_cv.yaml`. If this file does not exist, fallback to reading `data/master_cv.yaml`. Look at the `personal_info` block. If key professional links (like `linkedin`, `github`, or `portfolio`) are missing or empty, explicitly ask the user if they'd like to provide them to make the application stronger. If they provide them, update the yaml file.
 
 **Step 4: Select and Tailor**
 - **CV Constraint:** The final CV MUST be exactly 1 or 2 pages. 
@@ -30,9 +30,11 @@ Read the contents of `data/my_cv.yaml`. If this file does not exist, fallback to
 - **Drafting:** Write a tailored cover letter body emphasizing the intersection between the user's selected experiences and the company's needs.
 
 **Step 5: Generate LaTeX Content**
-Read the user's template preference and configuration from `data/config.yaml` (`template_style`, `font_size`, `font_package`). If the style is missing or not set, stop and tell the user they must select a template style by editing `data/config.yaml` and reviewing the `examples/` folder.
+Read the user's template preference and configuration from `data/config.yaml` (`template_style`, `font_size`, `font_package`, `use_icons`). If the style is missing or not set, stop and tell the user they must select a template style by editing `data/config.yaml` and reviewing the `examples/` folder.
 If the style is configured, select the appropriate templates from `templates/` (e.g., `cv_modern.tex`/`cover_letter_modern.tex`).
-Generate the final LaTeX content by replacing the placeholders (e.g., `<<NAME>>`, `<<CONTACT_INFO>>`, `<<SENDER_INFO>>`, `<<EXPERIENCE_SECTION>>`) with the tailored data. You MUST also replace the `<<FONT_SIZE>>` placeholder with the value specified in `data/config.yaml`, and the `<<FONT_PACKAGE>>` placeholder with the corresponding line from the config. 
+Generate the final LaTeX content by replacing the placeholders (e.g., `<<NAME>>`, `<<CONTACT_INFO>>`, `<<SENDER_INFO>>`, `<<EXPERIENCE_SECTION>>`) with the tailored data. 
+- **Contact Info & Icons:** When formatting `<<CONTACT_INFO>>` and `<<SENDER_INFO>>`, check the `use_icons` boolean in `data/config.yaml`. If it is `true`, use the `fontawesome5` package icons for provided links and details (e.g., `\faEnvelope\ email@example.com`, `\faPhone\ +1 234`, `\faLinkedin\ linkedin.com/in/user`, `\faGithub\ github.com/user`, `\faGlobe\ portfolio.com`). If `use_icons` is `false` or missing, do NOT use the `\fa...` icon commands, just output the plain text. Wrap the entire `<<CONTACT_INFO>>` string in `\footnotesize{...}` so it is 2 points smaller than the base font (Note: do NOT wrap `<<SENDER_INFO>>`, the template handles its size).
+- **Placeholders:** You MUST replace the `<<FONT_SIZE>>` placeholder with the value specified in `data/config.yaml`, and the `<<FONT_PACKAGE>>` placeholder with the corresponding line from the config. 
 - **Font Scaling for Detail:** To ensure the CV remains dense but readable, use `\footnotesize{...}` for the `<<SUMMARY>>` block, the bullet point highlights within `<<EXPERIENCE_SECTION>>`, and the `description` text within `<<PROJECTS_SECTION>>`. This ensures these extensive text blocks are 2 points smaller than the base font size.
 Ensure the LaTeX syntax is strictly correct. Make sure to properly format any empty fields by just omitting them.
 If there is an image file in the `data/profile_picture/` directory, copy it to the application folder and rename it to `profile.jpg`. Then, replace `<<PHOTO_BLOCK>>` in the CV LaTeX with `\includegraphics[width=3cm]{profile.jpg}`. If there is no photo in that folder, remove the `<<PHOTO_BLOCK>>` placeholder completely.

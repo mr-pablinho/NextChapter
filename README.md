@@ -31,7 +31,7 @@ You don't need to install a massive 3GB LaTeX program to get professional PDFs!
 ## 🚀 How to Use NextChapter
 
 ### Phase 1: Build Your "Master Bank" (First-Time Setup)
-The system is only as good as the data you give it. You need to load all your professional history into `data/master_cv.yaml`.
+The system is only as good as the data you give it. You need to load all your professional history into `data/my_cv.yaml`. (Note: We use `my_cv.yaml` for your private data, as it is ignored by git. The `master_cv.yaml` file is just a generic template for sharing).
 
 **One-Time Setup:**
 1. Open your terminal in this project folder and install the custom skill that helps you ingest data:
@@ -47,28 +47,40 @@ Drop your old CV or LinkedIn profile into the chat by typing:
 *Tip: You can also just provide a file path, like `/ingest ./old_cvs/resume_2023.pdf`, and the tool will read the file for you!*
 *Gemini will automatically extract your jobs, compare them to your bank, ask you to clarify any missing dates, and save them perfectly formatted.*
 
-**Option B: The Manual Way**
-Open `data/master_cv.yaml` in any text editor and type your jobs, skills, and projects in manually following the provided template structure.
+**Profile Picture (Optional):**
+If you want a profile picture in your CV, drop a file named `profile.jpg` into the `data/profile_picture/` folder. The system will automatically detect it and include it in your compiled PDFs!
 
 ---
 
-### Phase 2: Create Documents for a Specific Application
-Once your bank is full, applying for jobs takes seconds.
+### Phase 2: Customize Your Look
+You have total control over the output using `data/config.yaml`. Open this file to customize:
+*   **Template Style:** Choose from 8 different professional designs (`classic`, `modern`, `elegant`, `minimal`, `professional`, `creative`, `standard`, `sidebar`). You can preview what these look like by checking the PDFs in the `examples/` folder!
+*   **Fonts:** Choose between 10 different professional typefaces (like Lato, Roboto, Charter, or the classic LaTeX Latin Modern).
+*   **Font Size:** Adjust the base font size (`10pt`, `11pt`, `12pt`) to squeeze more info onto the page. *Note: The system automatically makes extensive text blocks (like your summary and bullet points) slightly smaller than the base font to keep the document dense but highly readable.*
+*   **Minimum Sections:** Define which sections (e.g., `education`, `skills`) MUST always be included in the final CV, no matter what.
+
+---
+
+### Phase 3: Create Documents for a Specific Application
+Once your bank is full and configured, applying for jobs takes seconds.
 
 1. Find a job offer online that you like.
 2. Open your Gemini CLI session (`gemini` in the terminal).
 3. Tell the tool to apply:
    `/apply-to [Paste the full text of the job offer here]`
-4. **Review & Approve:** Gemini will analyze the offer, select your most relevant experiences from your master bank, draft a custom cover letter, and ask you to approve it.
-5. **Compile:** Once you say "looks good," Gemini will automatically use `tectonic` to compile the final `.pdf` files.
-6. **Done!** Your tailored CV and Cover Letter will be saved in a newly created folder under `applications/`.
+4. **Smart Linking:** If your `my_cv.yaml` is missing links to your LinkedIn, GitHub, or Portfolio, the AI will proactively ask you for them so it can embed beautiful clickable icons directly into your CV header!
+5. **Review & Approve:** Gemini will analyze the offer, select your most relevant experiences from your master bank, draft a custom cover letter, and ask you to approve it.
+6. **Compile:** Once you say "looks good," Gemini will automatically use `tectonic` to compile the final `.pdf` files.
+7. **Done!** Your tailored CV and Cover Letter will be saved in a newly created folder under `applications/`.
 
 ---
 
 ## 📂 Project Structure
 For those who like to tinker:
-*   **`data/master_cv.yaml`**: The source of truth for all your data.
-*   **`templates/`**: The raw LaTeX templates (`cv_template.tex` and `cover_letter_template.tex`). You can edit these if you want to change the visual design of your documents!
-*   **`applications/`**: Where your finished PDFs are stored (Ignored by Git to keep your repo clean).
+*   **`data/my_cv.yaml`**: The source of truth for all your personal data (ignored by git).
+*   **`data/master_cv.yaml`**: The fallback, generic data template.
+*   **`data/config.yaml`**: Your styling and compilation settings.
+*   **`templates/`**: The raw LaTeX templates. You can edit these to change the exact visual structure!
+*   **`examples/`**: Generated previews of what every template style looks like.
+*   **`applications/`**: Where your finished PDFs are stored.
 *   **`GEMINI.md`**: The "brain" of the project—this file tells the Gemini CLI exactly how to behave when you ask it to apply for a job.
-*   **`cv-data-ingester/`**: The source code for the custom AI skill that reads your old CVs.

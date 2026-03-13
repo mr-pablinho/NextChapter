@@ -22,6 +22,9 @@ use_icons: true
 # Uncomment ONLY ONE of the options below. 
 # Note: Some fonts might require specific LaTeX packages to be installed by tectonic.
 
+# Choose the font family default. \sfdefault for Sans-serif, \rmdefault for Serif.
+font_family: "\rmdefault"
+
 # Sans-serif fonts (Modern & Clean)
 # font_package: "\usepackage[default]{lato}"          # Lato (Default modern)
 # font_package: "\usepackage[sfdefault]{roboto}"     # Roboto

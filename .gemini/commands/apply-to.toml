@@ -12,7 +12,7 @@ Instructions for creating the cover letter and CV:
 6. The cover letter should be highly compelling, engaging, and personalized. Avoid a "soulless" or overly generic tone.
 7. Draw specific connections between the job requirements and my past experiences, projects, and skills.
 8. Keep the tone professional but enthusiastic. Highlight my unique background (Ph.D., Data Science, Engineering).
-9. Use the `templates/cv_{style}.tex` and `templates/cover_letter_{style}.tex` templates (where `{style}` is the one defined in `data/config.yaml`). Populate `<<COVER_LETTER_BODY>>` and CV sections with the engaging content you write.
+9. Use the `templates/cv_{style}.tex` and `templates/cover_letter_{style}.tex` templates (where `{style}` is the one defined in `data/config.yaml`). Populate `<<COVER_LETTER_BODY>>` and CV sections with the engaging content you write. Also replace `<<FONT_FAMILY>>` with `\\renewcommand{\\familydefault}{<value>}` where `<value>` is the `font_family` from the config.
 10. If there is an image file in the `data/profile_picture/` folder, copy it to the application folder and rename it to `profile.jpg`. Then, replace the `<<PHOTO_BLOCK>>` placeholder in the CV with `\\includegraphics[width=3cm]{profile.jpg}`. If the folder is empty, replace `<<PHOTO_BLOCK>>` with an empty string or remove it.
 11. Make sure to generate the final LaTeX files and put them in a new folder under `applications/`.
 """

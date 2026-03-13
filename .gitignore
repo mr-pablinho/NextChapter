@@ -1,0 +1,26 @@
+# Secrets
+.env
+
+# LaTeX Compiler
+tectonic.exe
+
+# Packaged Skills
+*.skill
+
+# Application Outputs
+applications/
+
+# LaTeX Temporary Files
+*.aux
+*.log
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

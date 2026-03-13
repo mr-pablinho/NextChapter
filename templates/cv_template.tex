@@ -1,0 +1,40 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{1ex}{1ex}
+
+\begin{document}
+
+\begin{center}
+    {\Huge \textbf{<<NAME>>}} \\
+    \vspace{1mm}
+    <<EMAIL>> | <<PHONE>> | \href{https://<<LINKEDIN>>}{LinkedIn} | \href{https://<<GITHUB>>}{GitHub}
+\end{center}
+
+\section*{Summary}
+<<SUMMARY>>
+
+\section*{Experience}
+<<EXPERIENCE_SECTION>>
+% Format expected for injection:
+% \textbf{<<JOB_TITLE>>} \hfill <<START_DATE>> -- <<END_DATE>> \\
+% \textit{<<COMPANY>>} \hfill <<LOCATION>>
+% \begin{itemize}[noitemsep]
+%     \item <<HIGHLIGHT_1>>
+% \end{itemize}
+
+\section*{Projects}
+<<PROJECTS_SECTION>>
+
+\section*{Education}
+<<EDUCATION_SECTION>>
+
+\section*{Skills}
+<<SKILLS_SECTION>>
+
+\end{document}

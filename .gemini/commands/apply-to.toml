@@ -1,0 +1,5 @@
+description = "Apply to a job by providing the job offer details"
+prompt = """
+Apply to the following job offer:
+{{args}}
+"""

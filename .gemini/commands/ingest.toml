@@ -1,6 +1,6 @@
 description = "Ingest raw CV data or profile text into the master bank"
 prompt = """
-Use the `cv-data-ingester` skill to parse the following text and integrate it into my data/master_cv.yaml.
+Use the `cv-data-ingester` skill to parse the following text and integrate it into my data/my_cv.yaml.
 
 Here is the raw data:
 {{args}}

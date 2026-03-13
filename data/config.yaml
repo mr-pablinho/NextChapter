@@ -9,6 +9,12 @@ template_style: "professional"
 # Typical values: 10pt, 11pt, 12pt
 font_size: "11pt"
 
+# Number of pages for the generated CV (default is 2)
+cv_pages: 2
+
+# Number of pages for the generated Cover Letter (default is 1)
+cover_letter_pages: 1
+
 # Choose whether to show small FontAwesome icons next to your contact info (email, phone, LinkedIn, etc.)
 use_icons: true
 

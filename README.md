@@ -2,7 +2,7 @@
 
 Welcome! If you're here, it means you're probably navigating the job hunt and tired of manually tailoring your CV and Cover Letter for every single application. 
 
-**NextChapter** is your personal, automated "application factory." You create **one** master list containing everything you've ever done (jobs, projects, skills). Then, whenever you find a job you like, you just feed the job offer into this tool. It will automatically pick the most relevant experiences, format a beautiful 1-to-2 page PDF CV, and write a custom Cover Letter for that specific company in seconds.
+**NextChapter** is your personal, automated "application factory." You create **one** master list containing everything you've ever done (jobs, projects, skills). Then, whenever you find a job you like, you just feed the job offer into this tool. It will automatically pick the most relevant experiences, format a beautiful PDF CV (with a configurable page limit), and write a custom Cover Letter for that specific company in seconds.
 
 Everything runs locally on your computer, meaning your personal data stays safe and private.
 
@@ -57,6 +57,7 @@ You have total control over the output using `data/config.yaml`. Open this file 
 *   **Template Style:** Choose from 8 different professional designs (`classic`, `modern`, `elegant`, `minimal`, `professional`, `creative`, `standard`, `sidebar`). You can preview what these look like by checking the PDFs in the `examples/` folder!
 *   **Fonts:** Choose between 10 different professional typefaces (like Lato, Roboto, Charter, or the classic LaTeX Latin Modern).
 *   **Font Size:** Adjust the base font size (`10pt`, `11pt`, `12pt`) to squeeze more info onto the page. *Note: The system automatically makes extensive text blocks (like your summary and bullet points) slightly smaller than the base font to keep the document dense but highly readable.*
+*   **Page Limits:** Configure the exact number of pages for your CV (`cv_pages`) and Cover Letter (`cover_letter_pages`).
 *   **Minimum Sections:** Define which sections (e.g., `education`, `skills`) MUST always be included in the final CV, no matter what.
 
 ---

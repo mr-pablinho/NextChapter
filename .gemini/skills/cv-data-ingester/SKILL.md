@@ -1,13 +1,13 @@
 ---
 name: cv-data-ingester
-description: "Ingests, parses, deduplicates, and merges past CVs, resumes, or online profiles into the data/master_cv.yaml format. Use when the user provides past experience data to update their main CV repository."
+description: "Ingests, parses, deduplicates, and merges past CVs, resumes, or online profiles into data/my_cv.yaml. Use when the user provides past experience data to update their main CV repository. NEVER modify data/master_cv.yaml."
 ---
 
 # CV Data Ingester
 
-This skill helps the user integrate external career data (like old PDFs, LinkedIn text dumps, or raw text blocks about past jobs) into their structured `data/master_cv.yaml` single source of truth. 
+This skill helps the user integrate external career data (like old PDFs, LinkedIn text dumps, or raw text blocks about past jobs) into their structured `data/my_cv.yaml` single source of truth. 
 
-The goal is to maintain a clean, comprehensive, and non-redundant database of their professional history.
+The goal is to maintain a clean, comprehensive, and non-redundant database of their professional history, while leaving `data/master_cv.yaml` strictly untouched as a template.
 
 ## Workflow
 

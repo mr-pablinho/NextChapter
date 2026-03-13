@@ -20,13 +20,13 @@ Read the provided job offer and identify the core requirements, key skills, and 
 Use web search tools to look up the company and find its website. Research its mission, vision, and core values. Analyze if incorporating this information into the cover letter improves its impact. If it feels forced, do not use it; if it aligns well, plan to weave it in naturally.
 
 **Step 3: Read the Master Data & Ask for Missing Links**
-Read the contents of `data/my_cv.yaml`. If this file does not exist, fallback to reading `data/master_cv.yaml`. Look at the `personal_info` block. If key professional links (like `linkedin`, `github`, or `portfolio`) are missing or empty, explicitly ask the user if they'd like to provide them to make the application stronger. If they provide them, update the yaml file.
+Read the contents of `data/my_cv.yaml`. If this file does not exist, fallback to reading `data/master_cv.yaml`. Look at the `personal_info` block. If key professional links (like `linkedin`, `github`, or `portfolio`) are missing or empty, explicitly ask the user if they'd like to provide them to make the application stronger. If they provide them, update `data/my_cv.yaml` (NEVER modify `data/master_cv.yaml`, as it is a template).
 
 **Step 4: Select and Tailor**
-- **CV Constraint:** The final CV MUST be exactly 1 or 2 pages. 
+- **CV Constraint:** The final CV MUST be exactly the number of pages specified by `cv_pages` in `data/config.yaml` (defaults to 2). 
 - **Selection:** Choose the most relevant experiences, projects, and skills from the master data that directly address the job description. For experiences with multiple `titles` or pooled `highlights`, dynamically select the *single most relevant title* and the *most relevant subset of highlights* tailored to the specific job offer. You MUST read `minimum_sections` from `data/config.yaml` and ensure these sections are always present in the final output, regardless of space constraints.
 - **Consistency & Impact:** Act as an experienced recruiter. Ensure all selected bullet points are consistent in length, tone, and writing style (e.g., starting with strong action verbs). Optimize for impact by strategically emphasizing keywords from the job description. **CRITICAL:** Do NOT fabricate or hallucinate information. All tailored content, including keywords, MUST be strictly grounded in the user's actual capabilities and the provided input data. Discard irrelevant information to save space and focus the message.
-- **Cover Letter Constraint:** The cover letter MUST be exactly 1 page.
+- **Cover Letter Constraint:** The cover letter MUST be exactly the number of pages specified by `cover_letter_pages` in `data/config.yaml` (defaults to 1).
 - **Drafting:** Write a tailored cover letter body emphasizing the intersection between the user's selected experiences and the company's needs.
 
 **Step 5: Generate LaTeX Content**

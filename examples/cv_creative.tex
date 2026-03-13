@@ -1,34 +1,33 @@
 \documentclass[11pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[default]{lato}
-\usepackage[margin=1in]{geometry}
+\usepackage[left=1cm, right=1cm, top=1cm, bottom=1cm]{geometry}
 \usepackage{hyperref}
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage{graphicx}
-\usepackage{xcolor}
-\usepackage{geometry}
+\usepackage{tabularx}
 
-\geometry{left=1.5cm, right=1.5cm, top=1.5cm, bottom=1.5cm}
+\renewcommand{\familydefault}{\sfdefault}
 
-\definecolor{primary}{HTML}{2B2B2B}
-\definecolor{accent}{HTML}{0056b3}
-
-\titleformat{\section}{\Large\bfseries\color{primary}}{}{0em}{}[\color{primary}\titlerule]
+% Sections formatting based on provided examples
+\titleformat{\section}{\large\bfseries\scshape}{}{0em}{}[\vspace{0.5ex}\titlerule]
 \titlespacing{\section}{0pt}{2ex}{1ex}
 
 \begin{document}
 
-\begin{minipage}[c]{0.15\textwidth}
-    \includegraphics[width=3cm]{profile.jpg}
-\end{minipage}
-\hfill
-\begin{minipage}[c]{0.8\textwidth}
-    {\Huge \textbf{\color{primary}Jane Doe}} \\[1ex]
-    \textcolor{darkgray}{jane.doe@example.com | +1 234 567 8900 | LinkedIn | GitHub}
+\noindent
+\begin{minipage}[c]{0.75\textwidth}
+    {\Huge \textbf{Jane Doe}} \\[1.5ex]
+    {jane.doe@example.com | +1 234 567 8900 | LinkedIn | GitHub}
+\end{minipage}%
+\begin{minipage}[c]{0.25\textwidth}
+    \begin{flushright}
+        \includegraphics[width=3cm]{profile.jpg}
+    \end{flushright}
 \end{minipage}
 
-\vspace{5mm}
+\vspace{4mm}
 
 \section*{Summary}
 {\footnotesize A passionate professional with experience in software engineering.}

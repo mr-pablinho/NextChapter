@@ -1,32 +1,31 @@
 \documentclass[11pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[default]{lato}
-\usepackage[margin=1in]{geometry}
+\usepackage[margin=1.2in]{geometry}
 \usepackage{hyperref}
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage{graphicx}
 \usepackage{xcolor}
-\usepackage{geometry}
 
-\geometry{left=1.5cm, right=1.5cm, top=1.5cm, bottom=1.5cm}
+\definecolor{primary}{HTML}{1E293B} % Slate 800
+\definecolor{accent}{HTML}{0F172A}  % Slate 900
+\definecolor{lightgray}{HTML}{E2E8F0} % Slate 200
 
-\definecolor{primary}{HTML}{2B2B2B}
-\definecolor{accent}{HTML}{0056b3}
+\renewcommand{\familydefault}{\sfdefault}
 
-\titleformat{\section}{\Large\bfseries\color{primary}}{}{0em}{}[\color{primary}\titlerule]
+\titleformat{\section}{\Large\bfseries\color{primary}}{}{0em}{}[\vspace{1mm}\color{lightgray}\titlerule\vspace{2mm}]
 \titlespacing{\section}{0pt}{2ex}{1ex}
 
 \begin{document}
 
-\begin{minipage}[c]{0.15\textwidth}
-    \includegraphics[width=3cm]{profile.jpg}
-\end{minipage}
-\hfill
-\begin{minipage}[c]{0.8\textwidth}
-    {\Huge \textbf{\color{primary}Jane Doe}} \\[1ex]
-    \textcolor{darkgray}{jane.doe@example.com | +1 234 567 8900 | LinkedIn | GitHub}
-\end{minipage}
+\begin{center}
+    \includegraphics[width=3cm]{profile.jpg} \\
+    \vspace{2mm}
+    {\Huge \textbf{\color{accent}Jane Doe}} \\
+    \vspace{1.5mm}
+    {\small \textcolor{primary}{jane.doe@example.com | +1 234 567 8900 | LinkedIn | GitHub}}
+\end{center}
 
 \vspace{5mm}
 

@@ -1,0 +1,47 @@
+\documentclass[<<FONT_SIZE>>,a4paper]{article}
+\usepackage[utf8]{inputenc}
+<<FONT_PACKAGE>>
+\usepackage[margin=1.2in]{geometry}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\definecolor{primary}{HTML}{1E293B} % Slate 800
+\definecolor{accent}{HTML}{0F172A}  % Slate 900
+\definecolor{lightgray}{HTML}{E2E8F0} % Slate 200
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\titleformat{\section}{\Large\bfseries\color{primary}}{}{0em}{}[\vspace{1mm}\color{lightgray}\titlerule\vspace{2mm}]
+\titlespacing{\section}{0pt}{2ex}{1ex}
+
+\begin{document}
+
+\begin{center}
+    <<PHOTO_BLOCK>> \\
+    \vspace{2mm}
+    {\Huge \textbf{\color{accent}<<NAME>>}} \\
+    \vspace{1.5mm}
+    {\small \textcolor{primary}{<<CONTACT_INFO>>}}
+\end{center}
+
+\vspace{5mm}
+
+\section*{Summary}
+<<SUMMARY>>
+
+\section*{Experience}
+<<EXPERIENCE_SECTION>>
+
+\section*{Projects}
+<<PROJECTS_SECTION>>
+
+\section*{Education}
+<<EDUCATION_SECTION>>
+
+\section*{Skills}
+<<SKILLS_SECTION>>
+
+\end{document}

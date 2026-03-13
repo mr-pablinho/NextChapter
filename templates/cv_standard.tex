@@ -1,36 +1,34 @@
 \documentclass[<<FONT_SIZE>>,a4paper]{article}
 \usepackage[utf8]{inputenc}
 <<FONT_PACKAGE>>
-\usepackage[margin=1in]{geometry}
+\usepackage[left=1.2cm, right=1.2cm, top=1cm, bottom=1cm]{geometry}
 \usepackage{hyperref}
 \usepackage{titlesec}
 \usepackage{enumitem}
-\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{xcolor}
 
-\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{1ex}{1ex}
+\renewcommand{\familydefault}{\sfdefault}
+
+% Sections formatting - Standard Professional Style (inspired by source 5)
+\titleformat{\section}{\large\bfseries\scshape\raggedright}{}{0em}{}[\titlerule \vspace{-5pt}]
+\titlespacing{\section}{0pt}{1.5ex}{1ex}
 
 \begin{document}
 
 \begin{center}
-    <<PHOTO_BLOCK>> \\
-    \vspace{2mm}
     {\Huge \textbf{<<NAME>>}} \\
     \vspace{1mm}
-    <<CONTACT_INFO>>
+    {<<CONTACT_INFO>>}
 \end{center}
+
+\vspace{2mm}
 
 \section*{Summary}
 <<SUMMARY>>
 
 \section*{Experience}
 <<EXPERIENCE_SECTION>>
-% Format expected for injection:
-% \textbf{<<JOB_TITLE>>} \hfill <<START_DATE>> -- <<END_DATE>> \\
-% \textit{<<COMPANY>>} \hfill <<LOCATION>>
-% \begin{itemize}[noitemsep]
-%     \item <<HIGHLIGHT_1>>
-% \end{itemize}
 
 \section*{Projects}
 <<PROJECTS_SECTION>>

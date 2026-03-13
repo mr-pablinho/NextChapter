@@ -24,15 +24,17 @@ Read the contents of `data/my_cv.yaml`. If this file does not exist, fallback to
 
 **Step 4: Select and Tailor**
 - **CV Constraint:** The final CV MUST be exactly 1 or 2 pages. 
-- **Selection:** Choose the most relevant experiences, projects, and skills from the master data that directly address the job description. For experiences with multiple `titles` or pooled `highlights`, dynamically select the *single most relevant title* and the *most relevant subset of highlights* tailored to the specific job offer.
+- **Selection:** Choose the most relevant experiences, projects, and skills from the master data that directly address the job description. For experiences with multiple `titles` or pooled `highlights`, dynamically select the *single most relevant title* and the *most relevant subset of highlights* tailored to the specific job offer. You MUST read `minimum_sections` from `data/config.yaml` and ensure these sections are always present in the final output, regardless of space constraints.
 - **Consistency & Impact:** Act as an experienced recruiter. Ensure all selected bullet points are consistent in length, tone, and writing style (e.g., starting with strong action verbs). Optimize for impact by strategically emphasizing keywords from the job description. **CRITICAL:** Do NOT fabricate or hallucinate information. All tailored content, including keywords, MUST be strictly grounded in the user's actual capabilities and the provided input data. Discard irrelevant information to save space and focus the message.
 - **Cover Letter Constraint:** The cover letter MUST be exactly 1 page.
 - **Drafting:** Write a tailored cover letter body emphasizing the intersection between the user's selected experiences and the company's needs.
 
 **Step 5: Generate LaTeX Content**
-Read the user's template preference from `data/config.yaml` (`template_style`). If the config is missing or the value is not set, stop and tell the user they must select a template style by editing `data/config.yaml` and reviewing the `examples/` folder.
+Read the user's template preference and configuration from `data/config.yaml` (`template_style`, `font_size`, `font_package`). If the style is missing or not set, stop and tell the user they must select a template style by editing `data/config.yaml` and reviewing the `examples/` folder.
 If the style is configured, select the appropriate templates from `templates/` (e.g., `cv_modern.tex`/`cover_letter_modern.tex`).
-Generate the final LaTeX content by replacing the placeholders (e.g., `<<NAME>>`, `<<CONTACT_INFO>>`, `<<SENDER_INFO>>`, `<<EXPERIENCE_SECTION>>`) with the tailored data. Ensure the LaTeX syntax is strictly correct. Make sure to properly format any empty fields by just omitting them.
+Generate the final LaTeX content by replacing the placeholders (e.g., `<<NAME>>`, `<<CONTACT_INFO>>`, `<<SENDER_INFO>>`, `<<EXPERIENCE_SECTION>>`) with the tailored data. You MUST also replace the `<<FONT_SIZE>>` placeholder with the value specified in `data/config.yaml`, and the `<<FONT_PACKAGE>>` placeholder with the corresponding line from the config. 
+- **Font Scaling for Detail:** To ensure the CV remains dense but readable, use `\footnotesize{...}` for the `<<SUMMARY>>` block, the bullet point highlights within `<<EXPERIENCE_SECTION>>`, and the `description` text within `<<PROJECTS_SECTION>>`. This ensures these extensive text blocks are 2 points smaller than the base font size.
+Ensure the LaTeX syntax is strictly correct. Make sure to properly format any empty fields by just omitting them.
 If there is an image file in the `data/profile_picture/` directory, copy it to the application folder and rename it to `profile.jpg`. Then, replace `<<PHOTO_BLOCK>>` in the CV LaTeX with `\includegraphics[width=3cm]{profile.jpg}`. If there is no photo in that folder, remove the `<<PHOTO_BLOCK>>` placeholder completely.
 
 **Step 6: Create the Application Folder**

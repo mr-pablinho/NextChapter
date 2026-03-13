@@ -1,0 +1,47 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[default]{lato}
+\usepackage[left=1cm, right=1cm, top=1cm, bottom=1cm]{geometry}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+\renewcommand{\familydefault}{\sfdefault}
+
+\titleformat{\section}{\large\bfseries\scshape}{}{0em}{}[\vspace{0.2ex}\titlerule]
+\titlespacing{\section}{0pt}{2ex}{1ex}
+
+\begin{document}
+
+\noindent
+\begin{minipage}[t]{\textwidth}
+    {\Huge \textbf{Jane Doe}} \\
+    {jane.doe@example.com | +1 234 567 8900 | LinkedIn | GitHub}
+\end{minipage}
+
+\vspace{5mm}
+
+\noindent
+\begin{minipage}[t]{0.3\textwidth}
+    \section*{Skills}
+    \textbf{Languages:} Python, Java, C++
+    
+    \vspace{5mm}
+    
+    \section*{Education}
+    \textbf{B.S. in Computer Science} \hfill 2016 -- 2020 \\ \textit{University}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.65\textwidth}
+    \section*{Summary}
+    {\footnotesize A passionate professional with experience in software engineering.}
+
+    \section*{Experience}
+    \textbf{Senior Engineer} \hfill 2020 -- Present \\ \textit{Tech Corp} \hfill City, State \begin{itemize}[noitemsep] \footnotesize \item Built scalable systems. \end{itemize}
+
+    \section*{Projects}
+    \textbf{Project Alpha} \\ {\footnotesize Developed a cool app.}
+\end{minipage}
+
+\end{document}

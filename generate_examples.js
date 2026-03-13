@@ -2,21 +2,26 @@ const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
 
-const templates = ['classic', 'modern', 'elegant', 'minimal'];
+const templates = ['classic', 'modern', 'elegant', 'minimal', 'professional', 'creative', 'standard', 'sidebar'];
 if (!fs.existsSync('examples')) {
     fs.mkdirSync('examples');
 }
+if (fs.existsSync('data/profile_picture/profile.jpg')) {
+    fs.copyFileSync('data/profile_picture/profile.jpg', 'examples/profile.jpg');
+}
 
 const dummy_data = {
+    '<<FONT_SIZE>>': '11pt',
+    '<<FONT_PACKAGE>>': String.raw`\usepackage[default]{lato}`,
     '<<NAME>>': 'Jane Doe',
     '<<CONTACT_INFO>>': String.raw`jane.doe@example.com | +1 234 567 8900 | LinkedIn | GitHub`,
     '<<SENDER_INFO>>': String.raw`Jane Doe \\ jane.doe@example.com \\ +1 234 567 8900`,
-    '<<SUMMARY>>': 'A passionate professional with experience in software engineering.',
-    '<<EXPERIENCE_SECTION>>': String.raw`\textbf{Senior Engineer} \hfill 2020 -- Present \\ \textit{Tech Corp} \hfill City, State \begin{itemize}[noitemsep] \item Built scalable systems. \end{itemize}`,
-    '<<PROJECTS_SECTION>>': String.raw`\textbf{Project Alpha} \\ Developed a cool app.`,
+    '<<SUMMARY>>': String.raw`{\footnotesize A passionate professional with experience in software engineering.}`,
+    '<<EXPERIENCE_SECTION>>': String.raw`\textbf{Senior Engineer} \hfill 2020 -- Present \\ \textit{Tech Corp} \hfill City, State \begin{itemize}[noitemsep] \footnotesize \item Built scalable systems. \end{itemize}`,
+    '<<PROJECTS_SECTION>>': String.raw`\textbf{Project Alpha} \\ {\footnotesize Developed a cool app.}`,
     '<<EDUCATION_SECTION>>': String.raw`\textbf{B.S. in Computer Science} \hfill 2016 -- 2020 \\ \textit{University}`,
     '<<SKILLS_SECTION>>': String.raw`\textbf{Languages:} Python, Java, C++`,
-    '<<PHOTO_BLOCK>>': '~',
+    '<<PHOTO_BLOCK>>': fs.existsSync('data/profile_picture/profile.jpg') ? String.raw`\includegraphics[width=3cm]{profile.jpg}` : '',
     '<<HIRING_MANAGER_NAME_OR_TEAM>>': 'Hiring Manager',
     '<<COMPANY_NAME>>': 'Acme Corp',
     '<<COMPANY_ADDRESS>>': '123 Business Rd',

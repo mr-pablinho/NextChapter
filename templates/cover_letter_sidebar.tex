@@ -4,6 +4,8 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{hyperref}
 
+\renewcommand{\familydefault}{\sfdefault}
+
 \signature{<<NAME>>}
 \address{<<SENDER_INFO>>}
 
@@ -15,11 +17,11 @@
     <<COMPANY_ADDRESS>>
 }
 
-\opening{Dear <<HIRING_MANAGER_NAME_OR_TEAM>>,}
+\opening{\textbf{Dear <<HIRING_MANAGER_NAME_OR_TEAM>>,}}
 
 <<COVER_LETTER_BODY>>
 
-\closing{Sincerely,}
+\closing{\textbf{Sincerely,}}
 
 \end{letter}
 \end{document}

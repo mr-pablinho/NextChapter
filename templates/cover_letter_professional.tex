@@ -3,10 +3,15 @@
 <<FONT_PACKAGE>>
 \usepackage[margin=1.2in]{geometry}
 \usepackage{hyperref}
-\renewcommand{\familydefault}{\sfdefault} % Sans serif
+\usepackage{xcolor}
+
+\definecolor{primary}{HTML}{1E293B}
+\definecolor{accent}{HTML}{0F172A}
+
+\renewcommand{\familydefault}{\sfdefault}
 
 \signature{<<NAME>>}
-\address{<<SENDER_INFO>>}
+\address{\small \color{primary} <<SENDER_INFO>>}
 
 \begin{document}
 
@@ -16,11 +21,11 @@
     <<COMPANY_ADDRESS>>
 }
 
-\opening{Dear <<HIRING_MANAGER_NAME_OR_TEAM>>,}
+\opening{\textbf{\color{accent}Dear <<HIRING_MANAGER_NAME_OR_TEAM>>,}}
 
 <<COVER_LETTER_BODY>>
 
-\closing{Sincerely,}
+\closing{\textbf{\color{accent}Sincerely,}}
 
 \end{letter}
 \end{document}

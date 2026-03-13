@@ -1,34 +1,28 @@
 \documentclass[11pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[default]{lato}
-\usepackage[margin=1in]{geometry}
+\usepackage[left=1.2cm, right=1.2cm, top=1cm, bottom=1cm]{geometry}
 \usepackage{hyperref}
 \usepackage{titlesec}
 \usepackage{enumitem}
-\usepackage{graphicx}
+\usepackage{tabularx}
 \usepackage{xcolor}
-\usepackage{geometry}
 
-\geometry{left=1.5cm, right=1.5cm, top=1.5cm, bottom=1.5cm}
+\renewcommand{\familydefault}{\sfdefault}
 
-\definecolor{primary}{HTML}{2B2B2B}
-\definecolor{accent}{HTML}{0056b3}
-
-\titleformat{\section}{\Large\bfseries\color{primary}}{}{0em}{}[\color{primary}\titlerule]
-\titlespacing{\section}{0pt}{2ex}{1ex}
+% Sections formatting - Standard Professional Style (inspired by source 5)
+\titleformat{\section}{\large\bfseries\scshape\raggedright}{}{0em}{}[\titlerule \vspace{-5pt}]
+\titlespacing{\section}{0pt}{1.5ex}{1ex}
 
 \begin{document}
 
-\begin{minipage}[c]{0.15\textwidth}
-    \includegraphics[width=3cm]{profile.jpg}
-\end{minipage}
-\hfill
-\begin{minipage}[c]{0.8\textwidth}
-    {\Huge \textbf{\color{primary}Jane Doe}} \\[1ex]
-    \textcolor{darkgray}{jane.doe@example.com | +1 234 567 8900 | LinkedIn | GitHub}
-\end{minipage}
+\begin{center}
+    {\Huge \textbf{Jane Doe}} \\
+    \vspace{1mm}
+    {jane.doe@example.com | +1 234 567 8900 | LinkedIn | GitHub}
+\end{center}
 
-\vspace{5mm}
+\vspace{2mm}
 
 \section*{Summary}
 {\footnotesize A passionate professional with experience in software engineering.}

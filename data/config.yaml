@@ -2,7 +2,37 @@
 
 # Choose your preferred template style for your CV and Cover Letter. 
 # You can see examples of these styles in the `examples/` folder.
-# Available options: classic, modern, elegant, minimal
-# 
-# Uncomment the line below and set your preference:
-# template_style: "classic"
+# Available options: classic, modern, elegant, minimal, professional, creative, standard, sidebar
+template_style: "professional"
+
+# Set the desired font size for the LaTeX document.
+# Typical values: 10pt, 11pt, 12pt
+font_size: "11pt"
+
+# Choose a font package for your document. 
+# Uncomment ONLY ONE of the options below. 
+# Note: Some fonts might require specific LaTeX packages to be installed by tectonic.
+
+# Sans-serif fonts (Modern & Clean)
+# font_package: "\usepackage[default]{lato}"          # Lato (Default modern)
+# font_package: "\usepackage[sfdefault]{roboto}"     # Roboto
+# font_package: "\usepackage[default]{opensans}"   # Open Sans
+# font_package: "\usepackage[sfdefault]{inter}"      # Inter
+# font_package: "\usepackage[sfdefault]{FiraSans}"  # Fira Sans
+# font_package: "\usepackage{helvet}"              # Helvetica (Arial-like)
+
+# Serif fonts (Classic & Professional)
+font_package: "\usepackage{lmodern}"              # Latin Modern (Typical LaTeX Serif font)
+# font_package: "\usepackage{charter}"               # Charter
+# font_package: "\usepackage{ebgaramond}"            # EB Garamond (Elegant classic)
+# font_package: "\usepackage{libertine}"             # Linux Libertine
+# font_package: "\usepackage{merriweather}"          # Merriweather
+
+# List the minimum sections that MUST be included in the generated CV, 
+# even if space is tight. The system will prioritize fitting these sections.
+# Available sections from master data: summary, experience, projects, education, skills, awards, certifications, publications, conferences
+minimum_sections:
+  - "summary"
+  - "experience"
+  - "education"
+  - "skills"

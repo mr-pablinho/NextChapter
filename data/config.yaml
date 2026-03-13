@@ -3,11 +3,11 @@
 # Choose your preferred template style for your CV and Cover Letter. 
 # You can see examples of these styles in the `examples/` folder.
 # Available options: classic, modern, elegant, minimal, professional, creative, standard, sidebar
-template_style: "professional"
+template_style: "creative"
 
 # Set the desired font size for the LaTeX document.
 # Typical values: 10pt, 11pt, 12pt
-font_size: "11pt"
+font_size: "10pt"
 
 # Number of pages for the generated CV (default is 2)
 cv_pages: 2
@@ -48,3 +48,5 @@ minimum_sections:
   - "experience"
   - "education"
   - "skills"
+  - "publications"
+  - "awards"

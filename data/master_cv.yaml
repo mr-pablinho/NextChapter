@@ -1,66 +1,70 @@
 personal_info:
   name: "Jane Doe"
   email: "jane.doe@example.com"
-  phone: "+1 555-010-2020"
+  phone: "+1 234 567 8900"
   location: "New York, USA"
   linkedin: "linkedin.com/in/janedoe"
   github: "github.com/janedoe"
-  portfolio: "janedoe.dev"
+  portfolio: "janedoe.com"
 
-summary: "Versatile Software Engineer with 5+ years of experience in full-stack web development. Passionate about building scalable applications and intuitive user interfaces. Proven track record in optimizing backend performance and delivering high-quality code in agile environments."
+summary: "A highly motivated and adaptable professional with a proven track record of delivering impactful solutions. Experienced in leading cross-functional teams and bridging the gap between technical execution and business strategy. Passionate about leveraging data-driven insights to solve complex problems and drive continuous improvement."
 
 experience:
   - id: "tech_corp"
     company: "Tech Corp Inc."
-    titles: ["Senior Full-Stack Developer", "Software Engineer"]
-    location: "New York, NY"
-    start_date: "Mar 2021"
+    titles: ["Senior Software Engineer"]
+    location: "New York, USA"
+    start_date: "Jan 2020"
     end_date: "Present"
     highlights:
-      - "Led the migration of a legacy monolithic application to a microservices architecture, reducing deployment times by 40%."
-      - "Developed robust RESTful APIs using Node.js and Express."
-      - "Implemented responsive frontend features using React and TypeScript."
-      - "Mentored junior developers and conducted code reviews."
-    tags: ["JavaScript", "React", "Node.js", "Microservices"]
+      - "Architected and deployed scalable cloud infrastructure, improving system uptime by 99.9%."
+      - "Led a team of 5 engineers to deliver a critical customer-facing feature ahead of schedule."
+      - "Optimized database queries, reducing average response time by 40%."
+    tags: ["Cloud", "Leadership", "Optimization", "Backend"]
 
   - id: "startup_hub"
     company: "Startup Hub"
-    titles: ["Frontend Developer"]
-    location: "Remote"
-    start_date: "Jun 2018"
-    end_date: "Feb 2021"
+    titles: ["Software Developer"]
+    location: "San Francisco, USA"
+    start_date: "Jun 2017"
+    end_date: "Dec 2019"
     highlights:
-      - "Designed and implemented interactive dashboards using Vue.js."
-      - "Integrated third-party APIs for payment processing."
-      - "Optimized frontend assets, improving load times by 30%."
-    tags: ["Vue.js", "CSS", "Frontend"]
+      - "Developed and maintained full-stack web applications using React and Node.js."
+      - "Implemented automated testing pipelines, increasing code coverage to 85%."
+    tags: ["Full-stack", "React", "Node.js", "CI/CD"]
 
 projects:
-  - id: "proj_ecommerce"
-    name: "Open Source E-Commerce Platform"
-    description: "A headless e-commerce solution built with Next.js and Stripe integration."
-  - id: "proj_task_manager"
-    name: "Task Management App"
-    description: "A real-time collaborative task manager using WebSockets and React."
+  - id: "proj_opensource"
+    name: "Open Source Contributor"
+    description: "Actively contributed to various open-source projects, focusing on bug fixes and performance enhancements."
+  - id: "proj_data_viz"
+    name: "Interactive Data Dashboard"
+    description: "Built a real-time data visualization dashboard used by marketing teams to track campaign performance."
 
 education:
-  - id: "edu_university"
+  - id: "edu_state_uni"
     institution: "State University"
-    degree: "Bachelor of Science in Computer Science"
-    start_date: "2014"
-    end_date: "2018"
-    gpa: "3.8/4.0"
+    degree: "B.Sc. in Computer Science"
+    start_date: "2013"
+    end_date: "2017"
+    highlights: ["Graduated with Honors", "President of the Computer Science Club"]
 
 skills:
-  languages: ["JavaScript", "TypeScript", "Python", "HTML", "CSS"]
-  frameworks: ["React", "Next.js", "Node.js", "Express", "Vue.js"]
-  tools: ["Git", "Docker", "AWS", "Figma", "Jest"]
+  languages: ["JavaScript", "Python", "SQL", "HTML/CSS", "English (Native)", "Spanish (Conversational)"]
+  frameworks: ["React", "Node.js", "Express", "Django"]
+  tools: ["Git", "Docker", "AWS", "Figma"]
 
 awards:
-  - title: "Employee of the Year - Tech Corp Inc."
+  - title: "Employee of the Year"
     issuer: "Tech Corp Inc."
-    date: "2023"
+    date: "2022"
 
 certifications:
-  - title: "AWS Certified Developer - Associate"
-  - title: "Advanced React Patterns"
+  - title: "AWS Certified Solutions Architect"
+  - title: "Certified ScrumMaster (CSM)"
+
+publications:
+  - title: "The Future of Cloud Computing"
+    authors: "Doe, J., Smith, A."
+    journal: "Tech Innovators Journal"
+    date: "2021"

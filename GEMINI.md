@@ -24,7 +24,8 @@ Read the contents of `data/my_cv.yaml`. If this file does not exist, fallback to
 
 **Step 4: Select and Tailor**
 - **CV Constraint:** The final CV MUST be exactly 1 or 2 pages. 
-- **Selection:** Choose the most relevant experiences, projects, and skills from the master data that directly address the job description. For experiences with multiple `titles` or pooled `highlights`, dynamically select the *single most relevant title* and the *most relevant subset of highlights* tailored to the specific job offer. Discard irrelevant information to save space and focus the message.
+- **Selection:** Choose the most relevant experiences, projects, and skills from the master data that directly address the job description. For experiences with multiple `titles` or pooled `highlights`, dynamically select the *single most relevant title* and the *most relevant subset of highlights* tailored to the specific job offer.
+- **Consistency & Impact:** Act as an experienced recruiter. Ensure all selected bullet points are consistent in length, tone, and writing style (e.g., starting with strong action verbs). Optimize for impact by strategically emphasizing keywords from the job description. **CRITICAL:** Do NOT fabricate or hallucinate information. All tailored content, including keywords, MUST be strictly grounded in the user's actual capabilities and the provided input data. Discard irrelevant information to save space and focus the message.
 - **Cover Letter Constraint:** The cover letter MUST be exactly 1 page.
 - **Drafting:** Write a tailored cover letter body emphasizing the intersection between the user's selected experiences and the company's needs.
 

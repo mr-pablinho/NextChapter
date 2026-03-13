@@ -28,6 +28,10 @@ An automated, AI-powered system for generating highly tailored Resumes (CVs) and
    In your Gemini CLI session, say:
    `/apply-to [Paste Job Offer]`
 
+4. **Add New Experience (Ingest Data)**:
+   Whenever you have an old CV section, a new project, or a LinkedIn summary to add to your master bank, just type:
+   `/ingest [Paste the raw text of your experience]`
+
 ## Requirements
 
 - **Gemini CLI**: To run the automation.

@@ -1,38 +1,74 @@
 # NextChapter: Dynamic CV & Cover Letter System
 
-An automated, AI-powered system for generating highly tailored Resumes (CVs) and Cover Letters from a single source of truth.
+Welcome! If you're here, it means you're probably navigating the job hunt and tired of manually tailoring your CV and Cover Letter for every single application. 
 
-## Project Structure
+**NextChapter** is your personal, automated "application factory." You create **one** master list containing everything you've ever done (jobs, projects, skills). Then, whenever you find a job you like, you just feed the job offer into this tool. It will automatically pick the most relevant experiences, format a beautiful 1-to-2 page PDF CV, and write a custom Cover Letter for that specific company in seconds.
 
-- **`data/master_cv.yaml`**: The "Master Bank" of all your professional history. Everything you've ever done goes here.
-- **`templates/`**: Professional LaTeX templates for your CV and Cover Letter.
-- **`applications/`**: (Ignored by Git) Where tailored applications are generated for specific roles.
-- **`GEMINI.md`**: Foundational instructions for the Gemini CLI agent to automate the tailoring process.
-- **`cv-data-ingester/`**: A custom skill source for merging new data into your master file.
+Everything runs locally on your computer, meaning your personal data stays safe and private.
 
-## Features
+---
 
-- **Automated Tailoring**: Tell Gemini CLI "Apply to [Job Link/Description]" and it will automatically pick the best experiences from your master file to fit a 1-2 page CV.
-- **Dynamic Cover Letters**: Automatically writes a cover letter highlighting the intersection between your skills and the specific job requirements.
-- **Self-Contained LaTeX**: Uses `tectonic.exe` (a standalone LaTeX engine) to compile PDFs without needing a full TeX distribution installed on your system.
-- **Data Ingestion**: A dedicated skill to help you import data from LinkedIn or old CVs into your structured YAML bank.
+## 🛠 Prerequisites: Getting Set Up
 
-## Getting Started
+To use this tool, you need two main things:
 
-1. **Fill your Master Data**: Edit `data/master_cv.yaml` with your full history.
-2. **Install the Ingester Skill**:
+### 1. The Gemini CLI
+This project is powered by Google's **Gemini CLI**, an AI agent that runs directly in your terminal.
+*   **Install it:** You need Node.js installed on your computer. Once you have it, open your terminal and run:
+    ```bash
+    npm install -g @google/gemini-cli
+    ```
+*   **Get an API Key:** You need a Gemini API key to run the AI. As of right now, you can get one **for free** using Google AI Studio (https://aistudio.google.com/app/apikey).
+*   **Set your Key:** Create a file named `.env` in this project folder and add your key like this: `GEMINI_API_KEY="your_api_key_here"`.
+
+### 2. Tectonic (LaTeX Compiler)
+You don't need to install a massive 3GB LaTeX program to get professional PDFs! 
+*   **Windows users:** This repository comes with `tectonic.exe` included. It automatically handles everything for you.
+*   **Mac/Linux users:** You'll need to install Tectonic quickly (e.g., `brew install tectonic` or `curl --proto '=https' --tlsv1.2 -fsSL https://drop-sh.fullyjustified.net | sh`).
+
+---
+
+## 🚀 How to Use NextChapter
+
+### Phase 1: Build Your "Master Bank" (First-Time Setup)
+The system is only as good as the data you give it. You need to load all your professional history into `data/master_cv.yaml`.
+
+**One-Time Setup:**
+1. Open your terminal in this project folder and install the custom skill that helps you ingest data:
    ```bash
    gemini skills install .\cv-data-ingester.skill --scope workspace
    ```
-3. **Apply for a Job**:
-   In your Gemini CLI session, say:
-   `/apply-to [Paste Job Offer]`
+2. Start the Gemini CLI by typing `gemini` in your terminal.
+3. **The first time only**, tell the chat to load your new tools: Type `/skills reload` and then `/commands reload`.
 
-4. **Add New Experience (Ingest Data)**:
-   Whenever you have an old CV section, a new project, or a LinkedIn summary to add to your master bank, just type:
-   `/ingest [Paste the raw text of your experience]`
+**Adding Data:**
+Drop your old CV or LinkedIn profile into the chat by typing:
+`/ingest [Paste your massive block of text here]`
+*Tip: You can also just provide a file path, like `/ingest ./old_cvs/resume_2023.pdf`, and the tool will read the file for you!*
+*Gemini will automatically extract your jobs, compare them to your bank, ask you to clarify any missing dates, and save them perfectly formatted.*
 
-## Requirements
+**Option B: The Manual Way**
+Open `data/master_cv.yaml` in any text editor and type your jobs, skills, and projects in manually following the provided template structure.
 
-- **Gemini CLI**: To run the automation.
-- **Tectonic**: Included as `tectonic.exe` for local PDF compilation.
+---
+
+### Phase 2: Create Documents for a Specific Application
+Once your bank is full, applying for jobs takes seconds.
+
+1. Find a job offer online that you like.
+2. Open your Gemini CLI session (`gemini` in the terminal).
+3. Tell the tool to apply:
+   `/apply-to [Paste the full text of the job offer here]`
+4. **Review & Approve:** Gemini will analyze the offer, select your most relevant experiences from your master bank, draft a custom cover letter, and ask you to approve it.
+5. **Compile:** Once you say "looks good," Gemini will automatically use `tectonic` to compile the final `.pdf` files.
+6. **Done!** Your tailored CV and Cover Letter will be saved in a newly created folder under `applications/`.
+
+---
+
+## 📂 Project Structure
+For those who like to tinker:
+*   **`data/master_cv.yaml`**: The source of truth for all your data.
+*   **`templates/`**: The raw LaTeX templates (`cv_template.tex` and `cover_letter_template.tex`). You can edit these if you want to change the visual design of your documents!
+*   **`applications/`**: Where your finished PDFs are stored (Ignored by Git to keep your repo clean).
+*   **`GEMINI.md`**: The "brain" of the project—this file tells the Gemini CLI exactly how to behave when you ask it to apply for a job.
+*   **`cv-data-ingester/`**: The source code for the custom AI skill that reads your old CVs.

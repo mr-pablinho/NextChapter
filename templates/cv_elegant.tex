@@ -1,0 +1,43 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{mathptmx} % Times New Roman font for elegant look
+\usepackage{xcolor}
+
+\definecolor{darkblue}{HTML}{000066}
+
+\titleformat{\section}{\Large\bfseries\color{darkblue}\filcenter}{}{0em}{}[\vspace{0.5ex}\titlerule]
+\titlespacing{\section}{0pt}{2ex}{1.5ex}
+
+\begin{document}
+
+\begin{center}
+    <<PHOTO_BLOCK>> \\
+    \vspace{2mm}
+    {\Huge \textbf{\textsc{<<NAME>>}}} \\
+    \vspace{1.5mm}
+    \textit{<<CONTACT_INFO>>}
+\end{center}
+
+\vspace{4mm}
+
+\section*{SUMMARY}
+<<SUMMARY>>
+
+\section*{EXPERIENCE}
+<<EXPERIENCE_SECTION>>
+
+\section*{PROJECTS}
+<<PROJECTS_SECTION>>
+
+\section*{EDUCATION}
+<<EDUCATION_SECTION>>
+
+\section*{SKILLS}
+<<SKILLS_SECTION>>
+
+\end{document}

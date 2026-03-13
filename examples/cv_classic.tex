@@ -4,6 +4,7 @@
 \usepackage{hyperref}
 \usepackage{titlesec}
 \usepackage{enumitem}
+\usepackage{graphicx}
 
 \titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{1ex}{1ex}
@@ -11,16 +12,18 @@
 \begin{document}
 
 \begin{center}
-    {\Huge \textbf{<<NAME>>}} \\
+    ~ \\
+    \vspace{2mm}
+    {\Huge \textbf{Jane Doe}} \\
     \vspace{1mm}
-    <<EMAIL>> | <<PHONE>> | \href{https://<<LINKEDIN>>}{LinkedIn} | \href{https://<<GITHUB>>}{GitHub}
+    jane.doe@example.com | +1 234 567 8900 | LinkedIn | GitHub
 \end{center}
 
 \section*{Summary}
-<<SUMMARY>>
+A passionate professional with experience in software engineering.
 
 \section*{Experience}
-<<EXPERIENCE_SECTION>>
+\textbf{Senior Engineer} \hfill 2020 -- Present \\ \textit{Tech Corp} \hfill City, State \begin{itemize}[noitemsep] \item Built scalable systems. \end{itemize}
 % Format expected for injection:
 % \textbf{<<JOB_TITLE>>} \hfill <<START_DATE>> -- <<END_DATE>> \\
 % \textit{<<COMPANY>>} \hfill <<LOCATION>>
@@ -29,12 +32,12 @@
 % \end{itemize}
 
 \section*{Projects}
-<<PROJECTS_SECTION>>
+\textbf{Project Alpha} \\ Developed a cool app.
 
 \section*{Education}
-<<EDUCATION_SECTION>>
+\textbf{B.S. in Computer Science} \hfill 2016 -- 2020 \\ \textit{University}
 
 \section*{Skills}
-<<SKILLS_SECTION>>
+\textbf{Languages:} Python, Java, C++
 
 \end{document}

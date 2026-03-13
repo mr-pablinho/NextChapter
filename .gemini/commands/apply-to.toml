@@ -2,4 +2,17 @@ description = "Apply to a job by providing the job offer details"
 prompt = """
 Apply to the following job offer:
 {{args}}
+
+Instructions for creating the cover letter and CV:
+1. Check if `data/config.yaml` exists and contains a valid `template_style` key (options: classic, modern, elegant, minimal). 
+2. If the config is missing, commented out, or the style is not set, STOP IMMEDIATELY. Tell me: "It looks like you haven't chosen a template style yet. This is required for the first time. Please look at the examples in the `examples/` folder and update `data/config.yaml` by setting your preferred `template_style` (e.g., classic, modern, elegant, minimal). Once done, run the command again." Do not proceed with any drafting or searching.
+3. If the style is set, use my CV data from `data/master_cv.yaml` to tailor the cover letter.
+4. Before drafting, use a web search tool to find the company's website and research their mission, vision, and core values.
+5. Analyze if incorporating this researched information makes sense to improve the impact of the letter. If it feels forced or irrelevant, do not use it. If it aligns well, naturally weave it in.
+6. The cover letter should be highly compelling, engaging, and personalized. Avoid a "soulless" or overly generic tone.
+7. Draw specific connections between the job requirements and my past experiences, projects, and skills.
+8. Keep the tone professional but enthusiastic. Highlight my unique background (Ph.D., Data Science, Engineering).
+9. Use the `templates/cv_{style}.tex` and `templates/cover_letter_{style}.tex` templates (where `{style}` is the one defined in `data/config.yaml`). Populate `<<COVER_LETTER_BODY>>` and CV sections with the engaging content you write.
+10. If there is an image file in the `data/profile_picture/` folder, copy it to the application folder and rename it to `profile.jpg`. Then, replace the `<<PHOTO_BLOCK>>` placeholder in the CV with `\\includegraphics[width=3cm]{profile.jpg}`. If the folder is empty, replace `<<PHOTO_BLOCK>>` with an empty string or remove it.
+11. Make sure to generate the final LaTeX files and put them in a new folder under `applications/`.
 """

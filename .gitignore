@@ -24,3 +24,6 @@ applications/
 Thumbs.db
 .vscode/
 .idea/
+
+# Private User Data
+data/my_cv.yaml

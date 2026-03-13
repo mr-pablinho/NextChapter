@@ -1,0 +1,41 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1.2in]{geometry}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\renewcommand{\familydefault}{\sfdefault} % Sans serif font
+
+\titleformat{\section}{\large\bfseries\MakeUppercase}{}{0em}{}[\vspace{0.2ex}]
+\titlespacing{\section}{0pt}{3ex}{1ex}
+
+\begin{document}
+
+\begin{flushleft}
+    <<PHOTO_BLOCK>>
+    \vspace{2mm}
+    
+    {\Huge \textbf{<<NAME>>}} \\
+    \vspace{2mm}
+    <<CONTACT_INFO>>
+\end{flushleft}
+
+\vspace{6mm}
+
+\section*{Summary}
+<<SUMMARY>>
+
+\section*{Experience}
+<<EXPERIENCE_SECTION>>
+
+\section*{Projects}
+<<PROJECTS_SECTION>>
+
+\section*{Education}
+<<EDUCATION_SECTION>>
+
+\section*{Skills}
+<<SKILLS_SECTION>>
+
+\end{document}

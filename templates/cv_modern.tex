@@ -1,0 +1,47 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{geometry}
+
+\geometry{left=1.5cm, right=1.5cm, top=1.5cm, bottom=1.5cm}
+
+\definecolor{primary}{HTML}{2B2B2B}
+\definecolor{accent}{HTML}{0056b3}
+
+\titleformat{\section}{\Large\bfseries\color{primary}}{}{0em}{}[\color{primary}\titlerule]
+\titlespacing{\section}{0pt}{2ex}{1ex}
+
+\begin{document}
+
+\begin{minipage}[c]{0.15\textwidth}
+    <<PHOTO_BLOCK>>
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.8\textwidth}
+    {\Huge \textbf{\color{primary}<<NAME>>}} \\[1ex]
+    \textcolor{darkgray}{<<CONTACT_INFO>>}
+\end{minipage}
+
+\vspace{5mm}
+
+\section*{Summary}
+<<SUMMARY>>
+
+\section*{Experience}
+<<EXPERIENCE_SECTION>>
+
+\section*{Projects}
+<<PROJECTS_SECTION>>
+
+\section*{Education}
+<<EDUCATION_SECTION>>
+
+\section*{Skills}
+<<SKILLS_SECTION>>
+
+\end{document}

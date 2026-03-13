@@ -1,0 +1,41 @@
+const fs = require('fs');
+const path = require('path');
+const { execSync } = require('child_process');
+
+const templates = ['classic', 'modern', 'elegant', 'minimal'];
+if (!fs.existsSync('examples')) {
+    fs.mkdirSync('examples');
+}
+
+const dummy_data = {
+    '<<NAME>>': 'Jane Doe',
+    '<<CONTACT_INFO>>': String.raw`jane.doe@example.com | +1 234 567 8900 | LinkedIn | GitHub`,
+    '<<SENDER_INFO>>': String.raw`Jane Doe \\ jane.doe@example.com \\ +1 234 567 8900`,
+    '<<SUMMARY>>': 'A passionate professional with experience in software engineering.',
+    '<<EXPERIENCE_SECTION>>': String.raw`\textbf{Senior Engineer} \hfill 2020 -- Present \\ \textit{Tech Corp} \hfill City, State \begin{itemize}[noitemsep] \item Built scalable systems. \end{itemize}`,
+    '<<PROJECTS_SECTION>>': String.raw`\textbf{Project Alpha} \\ Developed a cool app.`,
+    '<<EDUCATION_SECTION>>': String.raw`\textbf{B.S. in Computer Science} \hfill 2016 -- 2020 \\ \textit{University}`,
+    '<<SKILLS_SECTION>>': String.raw`\textbf{Languages:} Python, Java, C++`,
+    '<<PHOTO_BLOCK>>': '~',
+    '<<HIRING_MANAGER_NAME_OR_TEAM>>': 'Hiring Manager',
+    '<<COMPANY_NAME>>': 'Acme Corp',
+    '<<COMPANY_ADDRESS>>': '123 Business Rd',
+    '<<COVER_LETTER_BODY>>': 'I am writing to apply for the position. I have great skills and would love to join your team. Thank you.'
+};
+
+for (const style of templates) {
+    for (const doc of ['cv', 'cover_letter']) {
+        const inPath = path.join('templates', `${doc}_${style}.tex`);
+        let content = fs.readFileSync(inPath, 'utf8');
+        for (const [k, v] of Object.entries(dummy_data)) {
+            content = content.split(k).join(v);
+        }
+        const outPath = path.join('examples', `${doc}_${style}.tex`);
+        fs.writeFileSync(outPath, content, 'utf8');
+        try {
+            execSync(`.\\\\tectonic.exe ${outPath}`, { stdio: 'inherit' });
+        } catch (e) {
+            console.error('Failed compiling', outPath);
+        }
+    }
+}

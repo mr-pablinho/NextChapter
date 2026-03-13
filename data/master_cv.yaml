@@ -1,60 +1,66 @@
-# Master Bank of Information
 personal_info:
-  name: "Your Name"
-  email: "email@example.com"
-  phone: "+1 234 567 8900"
-  location: "City, Country"
-  linkedin: "linkedin.com/in/yourprofile"
-  github: "github.com/yourusername"
-  portfolio: "yourwebsite.com"
+  name: "Jane Doe"
+  email: "jane.doe@example.com"
+  phone: "+1 555-010-2020"
+  location: "New York, USA"
+  linkedin: "linkedin.com/in/janedoe"
+  github: "github.com/janedoe"
+  portfolio: "janedoe.dev"
 
-summary: "A passionate professional with experience in..."
+summary: "Versatile Software Engineer with 5+ years of experience in full-stack web development. Passionate about building scalable applications and intuitive user interfaces. Proven track record in optimizing backend performance and delivering high-quality code in agile environments."
 
 experience:
-  - id: "job_1"
-    company: "Tech Corp A"
-    title: "Senior Software Engineer"
-    location: "City, State"
-    start_date: "Jan 2023"
+  - id: "tech_corp"
+    company: "Tech Corp Inc."
+    titles: ["Senior Full-Stack Developer", "Software Engineer"]
+    location: "New York, NY"
+    start_date: "Mar 2021"
     end_date: "Present"
     highlights:
-      - "Developed a high-performance microservice using Go, reducing latency by 40%."
-      - "Led a team of 5 engineers to deliver the new payments platform."
-    tags: ["Go", "Microservices", "Leadership", "Backend"]
+      - "Led the migration of a legacy monolithic application to a microservices architecture, reducing deployment times by 40%."
+      - "Developed robust RESTful APIs using Node.js and Express."
+      - "Implemented responsive frontend features using React and TypeScript."
+      - "Mentored junior developers and conducted code reviews."
+    tags: ["JavaScript", "React", "Node.js", "Microservices"]
 
-  - id: "job_2"
-    company: "Startup B"
-    title: "Software Engineer"
+  - id: "startup_hub"
+    company: "Startup Hub"
+    titles: ["Frontend Developer"]
     location: "Remote"
-    start_date: "Jun 2020"
-    end_date: "Dec 2022"
+    start_date: "Jun 2018"
+    end_date: "Feb 2021"
     highlights:
-      - "Built the core web application using React and Node.js."
-      - "Implemented CI/CD pipelines using GitHub Actions."
-    tags: ["React", "Node.js", "CI/CD", "Fullstack"]
+      - "Designed and implemented interactive dashboards using Vue.js."
+      - "Integrated third-party APIs for payment processing."
+      - "Optimized frontend assets, improving load times by 30%."
+    tags: ["Vue.js", "CSS", "Frontend"]
 
 projects:
-  - id: "proj_1"
-    name: "Open Source Tool X"
-    description: "A CLI tool for automating deployment workflows."
-    technologies: ["Python", "Docker"]
-    link: "github.com/yourusername/tool-x"
-    tags: ["Python", "Automation", "DevOps"]
+  - id: "proj_ecommerce"
+    name: "Open Source E-Commerce Platform"
+    description: "A headless e-commerce solution built with Next.js and Stripe integration."
+  - id: "proj_task_manager"
+    name: "Task Management App"
+    description: "A real-time collaborative task manager using WebSockets and React."
 
 education:
-  - id: "edu_1"
-    institution: "University of Technology"
-    degree: "B.S. in Computer Science"
-    start_date: "Sep 2016"
-    end_date: "May 2020"
+  - id: "edu_university"
+    institution: "State University"
+    degree: "Bachelor of Science in Computer Science"
+    start_date: "2014"
+    end_date: "2018"
     gpa: "3.8/4.0"
 
 skills:
-  languages: ["Python", "Go", "JavaScript", "TypeScript"]
-  frameworks: ["React", "Node.js", "Express"]
-  tools: ["Docker", "Kubernetes", "Git", "AWS"]
+  languages: ["JavaScript", "TypeScript", "Python", "HTML", "CSS"]
+  frameworks: ["React", "Next.js", "Node.js", "Express", "Vue.js"]
+  tools: ["Git", "Docker", "AWS", "Figma", "Jest"]
 
 awards:
-  - title: "Hackathon Winner 2021"
-    issuer: "Tech Innovators"
-    date: "Oct 2021"
+  - title: "Employee of the Year - Tech Corp Inc."
+    issuer: "Tech Corp Inc."
+    date: "2023"
+
+certifications:
+  - title: "AWS Certified Developer - Associate"
+  - title: "Advanced React Patterns"

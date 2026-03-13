@@ -1,0 +1,8 @@
+# Configuration file for the CV Automation System
+
+# Choose your preferred template style for your CV and Cover Letter. 
+# You can see examples of these styles in the `examples/` folder.
+# Available options: classic, modern, elegant, minimal
+# 
+# Uncomment the line below and set your preference:
+# template_style: "classic"

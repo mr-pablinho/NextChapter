@@ -4,7 +4,7 @@ Apply to the following job offer:
 {{args}}
 
 Instructions for creating the cover letter and CV:
-1. Check if `data/config.yaml` exists and contains a valid `template_style` key (options: classic, modern, elegant, minimal). 
+1. Read `data/config.yaml` and load ALL configuration values. You MUST strictly adhere to every setting provided, particularly `cv_pages` (ensuring the CV is exactly that length), `cover_letter_pages`, and `use_icons` (applying icons to BOTH CV and Cover Letter if true). Check if it contains a valid `template_style` key (options: classic, modern, elegant, minimal, professional, creative, standard, sidebar). 
 2. If the config is missing, commented out, or the style is not set, STOP IMMEDIATELY. Tell me: "It looks like you haven't chosen a template style yet. This is required for the first time. Please look at the examples in the `examples/` folder and update `data/config.yaml` by setting your preferred `template_style` (e.g., classic, modern, elegant, minimal). Once done, run the command again." Do not proceed with any drafting or searching.
 3. If the style is set, use my CV data from `data/master_cv.yaml` to tailor the cover letter.
 4. Before drafting, use a web search tool to find the company's website and research their mission, vision, and core values.

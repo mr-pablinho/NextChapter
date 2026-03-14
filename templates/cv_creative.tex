@@ -11,9 +11,22 @@
 
 <<FONT_FAMILY>>
 
-% Sections formatting based on provided examples
+% Sections formatting
 \titleformat{\section}{\large\bfseries\scshape}{}{0em}{}[\vspace{0.5ex}\titlerule]
-\titlespacing{\section}{0pt}{2ex}{1ex}
+\titlespacing{\section}{0pt}{2ex}{2.5ex}
+
+% Experience & Projects Formatting
+% Usage: \experienceheader{Company}{Location}{Title}{Dates}
+\newcommand{\experienceheader}[4]{
+    \noindent \textbf{#1} \hfill #2 \\
+    \textit{#3} \hfill #4 \\
+    \vspace{-2ex}
+}
+% Use this command between different job/project entries
+\newcommand{\experienceitemsep}{\vspace{3ex}}
+
+% Global list settings for tight bullet points
+\setlist[itemize]{leftmargin=1.5em, nosep, topsep=0pt}
 
 \begin{document}
 
@@ -44,5 +57,20 @@
 
 \section*{Skills}
 <<SKILLS_SECTION>>
+
+\section*{Awards}
+<<AWARDS_SECTION>>
+
+\section*{Certifications}
+<<CERTIFICATIONS_SECTION>>
+
+\section*{Publications}
+<<PUBLICATIONS_SECTION>>
+
+\section*{Social Memberships}
+<<SOCIAL_MEMBERSHIPS_SECTION>>
+
+\section*{Hobbies}
+<<HOBBIES_SECTION>>
 
 \end{document}
